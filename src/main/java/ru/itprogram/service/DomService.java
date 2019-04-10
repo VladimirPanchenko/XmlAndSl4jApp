@@ -34,8 +34,8 @@ public class DomService {
                     for(int j = 0; j < plantProps.getLength(); j++) {
                         Node plantProp = plantProps.item(j);
                         if (plantProp.getNodeType() != Node.TEXT_NODE) {
-                            String plantSting = plantProp.getNodeName() + ":" + plantProp.
-                                    getChildNodes().item(0).getTextContent();
+                            String plantSting = plantProp.getNodeName() + ":" + plantProp
+                                    .getChildNodes().item(0).getTextContent();
                             System.out.println(plantSting);
                             logger.info(plantSting);
                         }

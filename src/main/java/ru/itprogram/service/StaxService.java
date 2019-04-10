@@ -16,7 +16,8 @@ public class StaxService {
     public static void parse(String pathFile) {
         logger = LoggerFactory.getLogger(DomService.class);
         try {
-            xmlStreamReader = XMLInputFactory.newInstance().createXMLStreamReader(pathFile, new FileInputStream(pathFile));
+            xmlStreamReader = XMLInputFactory.newInstance()
+                    .createXMLStreamReader(pathFile, new FileInputStream(pathFile));
             while (xmlStreamReader.hasNext()) {
                 xmlStreamReader.next();
                 if (xmlStreamReader.isStartElement()) {
@@ -27,7 +28,8 @@ public class StaxService {
                     String closingElement = "/" + xmlStreamReader.getLocalName();
                     System.out.println(closingElement);
                     logger.info(closingElement);
-                } else if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0) {
+                } else if (xmlStreamReader.hasText() && xmlStreamReader
+                        .getText().trim().length() > 0) {
                     String value = "   " + xmlStreamReader.getText();
                     System.out.println(value);
                     logger.info(value);
